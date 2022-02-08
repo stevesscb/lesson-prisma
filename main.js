@@ -4,7 +4,7 @@ import express from 'express'
 import morgan from 'morgan'
 import expressLayouts from 'express-ejs-layouts'
 import compileSass from 'express-compile-sass'
-import moment from "moment"
+import moment from 'moment'
 
 const app = express() // The instance that "host" our server
 const port = process.env.PORT || 3000 // The port number our server runs on
@@ -39,5 +39,6 @@ app.use('/', (await import('./src/routes.js')).default)
 
 // Starts the server
 app.listen(port, () => {
+  // eslint-disable-next-line
   console.log(`App listening at http://localhost:${port}`)
 })
